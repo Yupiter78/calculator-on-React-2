@@ -10,7 +10,13 @@ function App() {
     const [total, setTotal] = useState(false);
 
     const inputNum = (e) => {
+        console.log("e.target.innerText:", e.target.innerText);
+        console.log("e:", e);
+        console.log("curState:", curState);
         if (curState.includes(".") && e.target.innerText === ".") return;
+        // if (input === "0" && e.target.innerText === ".") {
+        //     setCurState((prev) => prev + ".");
+        // }
 
         if (total) {
             setPreState("");
@@ -67,6 +73,9 @@ function App() {
         setPreState(cal);
         setCurState("");
     };
+
+    console.log("input:", input);
+    console.log("curState__2:", curState);
 
     const minusPlus = () => {
         if (curState.charAt(0) === "-") {
